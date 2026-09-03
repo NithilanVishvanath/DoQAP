@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.venv/
+
+# eval outputs: keep the final plots + summary table, ignore bulky per-example CSVs
+results/*.csv
+!results/summary.csv

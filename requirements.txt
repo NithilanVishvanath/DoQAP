@@ -1,0 +1,22 @@
+# DoQAP — Phase 1 dependencies
+# Python 3.12 recommended.
+#
+# PyTorch: the RTX 5060 Laptop GPU is Blackwell (sm_120) and needs a CUDA 12.8 build.
+# Install torch FIRST from the cu128 index, then the rest:
+#
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cu128
+#   pip install -r requirements.txt
+#
+# If `torch.cuda.get_device_name(0)` errors on sm_120 with the stable wheel, use the nightly:
+#   pip install --pre torch torchvision --index-url https://download.pytorch.org/whl/nightly/cu128
+
+torch>=2.7            # installed separately from the cu128 index (see note above)
+torchvision>=0.22
+
+transformers>=4.49    # Qwen2-VL support + sdpa attention
+accelerate>=1.0
+datasets>=3.0
+pillow>=10.0
+Levenshtein>=0.25     # ANLS metric
+tqdm>=4.66
+pandas>=2.2
